@@ -145,5 +145,3 @@ endm
 
 rew E 'y . gg ( ff ('x , 'y) => ff( 'y , 'x) , hh () ) [ ff ( 'z , 'y ) / 'x ]
 .
-
-quit
