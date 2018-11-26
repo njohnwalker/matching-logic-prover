@@ -4,5 +4,7 @@ set -eu
 base="$(cd "$(dirname "$0")"; pwd)"
 type -t ninja > /dev/null || fail "`ninja-build` not available. Giving up."
 export PYTHONPATH="$base/ext/"
+export PATH="$base/.build/llvm-backend/install/bin:$PATH"
+export PATH="$base/lib:$PATH" # clan
 python3 lib/build.py
 exec ninja -f .build/generated.ninja "$@"

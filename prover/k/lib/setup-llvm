@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+# Usage: $0 $build_dir $llvm_repo_dir
+
+set -eu
+
+build_dir=$(mkdir -p $1; cd $1; pwd) ; shift
+llvm_repo_dir=$(cd $1; pwd) ; shift
+
+type -t cmake > /dev/null || fail "`cmake` not available. Giving up."
+
+cd "$llvm_repo_dir"
+git submodule update --init
+
+cd "$build_dir"
+CC=clang CXX=clang++ cmake "$llvm_repo_dir" -DCMAKE_BUILD_TYPE=Release
+make -j`nproc`
+make install

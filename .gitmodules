@@ -7,3 +7,6 @@
 [submodule "prover/k/ext/pandoc-tangle"]
 	path = prover/k/ext/pandoc-tangle
 	url = https://github.com/ehildenb/pandoc-tangle
+[submodule "prover/k/ext/llvm-backend"]
+	path = prover/k/ext/llvm-backend
+	url = https://github.com/kframework/llvm-backend
