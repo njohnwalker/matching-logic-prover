@@ -27,10 +27,10 @@ module KORE-COMMON
   imports TOKENS
   imports STRING-SYNTAX
 
-  syntax Sort     ::= KoreName | KoreName "{" Sorts "}" [klabel(nameParam)]
-  syntax Sorts    ::= List{Sort, ","} [klabel(sortList)]
-  syntax Symbol   ::= KoreName "{" Sorts "}" [klabel(symbolSorts)]
-  syntax Variable ::= KoreName ":" Sort [klabel(varType)]
+  syntax Sort     ::= KoreName | KoreName "{" Sorts "}" [klabel(nameParam), symbol(nameParam)]
+  syntax Sorts    ::= List{Sort, ","} [klabel(sortList), symbol(sortList)]
+  syntax Symbol   ::= KoreName "{" Sorts "}" [klabel(symbolSorts), symbol(symbolSorts)]
+  syntax Variable ::= KoreName ":" Sort [klabel(varType), symbol(varType)]
 
   syntax Pattern ::= Variable
                    | String
